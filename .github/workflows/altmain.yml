@@ -65,16 +65,30 @@ jobs:
           Invoke-WebRequest -Uri $tsUrl -OutFile $installerPath
           Start-Process msiexec.exe -ArgumentList "/i", "`"$installerPath`"", "/quiet", "/norestart" -Wait
           Remove-Item $installerPath -Force
-          
-      - name: Install Chocolaty 
-        run: |
-          Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
-
-      - name: Check Chocolaty
+      - name: Check Status Chocolaty
         run: |
           choco --version
 
+      - name: Install Android Studio
+        run: |
+          choco install androidstudio -y --params="'/AddToDesktop /PinToTaskbar'"
+
+      - name: Install Vscode
+        run: |
+          choco install vscode -y --params="'/PinToTaskbar'"
+
+      - name: Install Qbittorrent
+        run: |
+          choco install qbittorrent -y --params="'/PinToTaskbar'"
+          
+      - name: Install AndroidStudio
+        run: |
+          choco install androidstudio -y --params="'/PinToTaskbar'"
+
+      - name: Install AndroidSDK 
+        run: |
+          choco install android-sdk -y
           
       - name: Establish Tailscale Connection
         run: |
