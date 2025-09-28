@@ -68,7 +68,7 @@ jobs:
 
       - name: Change theme
         run: |
-          start "" "C:\Windows\Resources\Themes\glow.theme"
+          Start-Process -FilePath "C:\Windows\Resources\Themes\aero.theme"
 
       - name: Install Android Studio
         run: |
