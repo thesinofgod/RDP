@@ -89,6 +89,10 @@ jobs:
       - name: Install AndroidSDK 
         run: |
           choco install android-sdk -y
+
+      - name: Check Curl
+        run: |
+          curl -o google.html https://www.google.com
           
       - name: Establish Tailscale Connection
         run: |
