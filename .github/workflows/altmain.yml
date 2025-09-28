@@ -66,33 +66,29 @@ jobs:
           Start-Process msiexec.exe -ArgumentList "/i", "`"$installerPath`"", "/quiet", "/norestart" -Wait
           Remove-Item $installerPath -Force
 
-      - name: Check Status Chocolaty
+      - name: Change theme
         run: |
-          choco --version
+          start "" "C:\Windows\Resources\Themes\glow.theme"
 
       - name: Install Android Studio
         run: |
-          choco install androidstudio -y --params="'/AddToDesktop /PinToTaskbar'"
+          choco install androidstudio -y --no-progress --params="'/AddToDesktop /PinToTaskbar'"
 
       - name: Install Vscode
         run: |
-          choco install vscode -y --params="'/PinToTaskbar'"
+          choco install vscode -y --no-progress --params="'/PinToTaskbar'"
 
       - name: Install Qbittorrent
         run: |
-          choco install qbittorrent -y --params="'/PinToTaskbar'"
+          choco install qbittorrent -y --no-progress --params="'/PinToTaskbar'"
           
       - name: Install AndroidStudio
         run: |
-          choco install androidstudio -y --params="'/PinToTaskbar'"
+          choco install androidstudio -y --no-progress --params="'/PinToTaskbar'"
 
       - name: Install AndroidSDK 
         run: |
-          choco install android-sdk -y
-
-      - name: Check Curl
-        run: |
-          curl -o google.html https://www.google.com
+          choco install android-sdk -y --no-progress
           
       - name: Establish Tailscale Connection
         run: |
