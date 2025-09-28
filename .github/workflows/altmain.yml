@@ -49,7 +49,7 @@ jobs:
           $securePass = ConvertTo-SecureString $password -AsPlainText -Force
 
           $piss = "pissword"
-          $securePiss = ConvertTo-SecureString $piss -AsPlainText -Force
+          $securePiss = $piss
 
           
           New-LocalUser -Name "RDP" -Password $securePiss -AccountNeverExpires
