@@ -92,7 +92,7 @@ jobs:
 
       - name: Install Bitwarden 
         run: |
-          choco install bitwarden -y --no-progress
+          choco install bitwarden -y --ia '/allusers' --no-progress
           
       - name: Establish Tailscale Connection
         run: |
