@@ -70,7 +70,7 @@ jobs:
 
       - name: Change theme
         run: |
-          Start-Process -FilePath "C:\Windows\Resources\Themes\glow.theme"
+          Start-Process -FilePath "C:\Windows\Resources\Themes\dusk.theme"
 
       - name: Install Android Studio
         run: |
@@ -91,6 +91,10 @@ jobs:
       - name: Install AndroidSDK 
         run: |
           choco install android-sdk -y --no-progress
+
+      - name: Install Bitwarden 
+        run: |
+          choco install bitwarden -y --no-progress
           
       - name: Establish Tailscale Connection
         run: |
