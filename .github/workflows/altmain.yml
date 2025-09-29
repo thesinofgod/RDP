@@ -67,10 +67,6 @@ jobs:
       - name: Install Qbittorrent
         run: |
           choco install qbittorrent -y --no-progress --params="'/PinToTaskbar'"
-          
-      - name: Install AndroidStudio
-        run: |
-          choco install androidstudio -y --no-progress --params="'/PinToTaskbar'"
 
       - name: Install AndroidSDK 
         run: |
