@@ -28,11 +28,6 @@ jobs:
 
           # (Optional) Restart the Remote Desktop service to ensure changes take effect
           Restart-Service -Name TermService -Force
-
-      - name: Change Theme
-        run: |
-          Set-ItemProperty -Path "HKU:\.DEFAULT\Software\Microsoft\Windows\CurrentVersion\Themes" -Name "CurrentTheme" -Value "C:\Windows\Resources\Themes\themeA.theme"
-
           
       - name: Create RDP User with Secure Password
         run: |
