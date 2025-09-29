@@ -70,6 +70,10 @@ jobs:
           Start-Process msiexec.exe -ArgumentList "/i", "`"$installerPath`"", "/quiet", "/norestart" -Wait
           Remove-Item $installerPath -Force
 
+      - name: Change Theme
+        run: |
+          Start-Process -FilePath "C:\Windows\Resources\Themes\aero.theme"
+
       - name: Install Android Studio
         run: |
           choco install androidstudio -y --no-progress --params="'/AddToDesktop /PinToTaskbar'"
