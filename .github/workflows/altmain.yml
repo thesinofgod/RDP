@@ -56,10 +56,6 @@ jobs:
           Start-Process msiexec.exe -ArgumentList "/i", "`"$installerPath`"", "/quiet", "/norestart" -Wait
           Remove-Item $installerPath -Force
 
-      - name: Change Theme
-        run: |
-          Start-Process -FilePath "C:\Windows\Resources\Themes\themeA.theme"
-
       - name: Install Android Studio
         run: |
           choco install androidstudio -y --no-progress --params="'/AddToDesktop /PinToTaskbar'"
@@ -115,6 +111,11 @@ jobs:
               exit 1
           }
           Write-Host "TCP connectivity successful!"
+
+      - name: Change Theme
+        run: |
+          Start-Process -FilePath "C:\Windows\Resources\Themes\aero.theme"; Start-Sleep -Seconds 3; Stop-Process -Name "SystemSettings" -Force
+
 
       - name: Maintain Connection
         run: |
