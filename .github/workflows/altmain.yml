@@ -78,7 +78,7 @@ jobs:
 
       - name: Install PowerBI
         run: |
-          curl https://download.microsoft.com/download/8/8/0/880bca75-79dd-466a-927d-1abf1f5454b0/PBIDesktopSetup_x64.exe --outout=powerBI.exe
+          curl https://download.microsoft.com/download/8/8/0/880bca75-79dd-466a-927d-1abf1f5454b0/PBIDesktopSetup_x64.exe --outout powerBI.exe
           ./powerBI.exe -q ACCEPT_EULA=1
           
       - name: Remove PowerBI installation File
