@@ -67,6 +67,14 @@ jobs:
       - name: Install Bitwarden 
         run: |
           choco install bitwarden -y --ia '/allusers' --no-progress
+      
+      - name: Install Android studio
+        run: |
+          choco install androidstudio -y --no-progress --params="'/AddToDesktop /PinToTaskbar'"
+
+      - name: Install Android SDK
+        run: |
+          choco install android-sdk -y --no-progress
           
       - name: Establish Tailscale Connection
         run: |
