@@ -75,24 +75,6 @@ jobs:
       - name: Install Bitwarden 
         run: |
           choco install bitwarden -y --ia '/allusers' --no-progress
-
-      - name: Install PowerBI
-        run: |
-          curl https://download.microsoft.com/download/8/8/0/880bca75-79dd-466a-927d-1abf1f5454b0/PBIDesktopSetup_x64.exe -o powerBI.exe
-          ./powerBI.exe -q ACCEPT_EULA=1
-          
-      - name: Remove PowerBI installation File
-        run: |
-          rm powerBI.exe
-
-      - name: Install Micorsoft365
-        run: |
-          curl -L -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" -o ms365.exe "http://go.microsoft.com/fwlink/?LinkID=2264705"
-          ./ms365.exe -q
-
-      - name: Remove Microsoft365 Installation File
-        run: |
-          rm ms365.exe
           
       - name: Establish Tailscale Connection
         run: |
