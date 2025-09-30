@@ -56,10 +56,6 @@ jobs:
           Start-Process msiexec.exe -ArgumentList "/i", "`"$installerPath`"", "/quiet", "/norestart" -Wait
           Remove-Item $installerPath -Force
 
-      - name: Install Android Studio
-        run: |
-          choco install androidstudio -y --no-progress --params="'/AddToDesktop /PinToTaskbar'"
-
       - name: Install Vscode
         run: |
           choco install vscode -y --no-progress --params="'/PinToTaskbar'"
@@ -67,11 +63,7 @@ jobs:
       - name: Install Qbittorrent
         run: |
           choco install qbittorrent -y --no-progress --params="'/PinToTaskbar'"
-
-      - name: Install AndroidSDK 
-        run: |
-          choco install android-sdk -y --no-progress
-
+          
       - name: Install Bitwarden 
         run: |
           choco install bitwarden -y --ia '/allusers' --no-progress
